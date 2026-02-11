@@ -1,0 +1,7 @@
+Starting Minimal test...
+Using hardcoded URL: postgresql://postgres.uvzisyaxdmdopxghxkid:****@34.117.176.2:5432/postgres?sslaccept=accept_invalid_certs
+Connecting...
+Failed:
+Can't reach database server at `34.117.176.2:5432`
+
+Please make sure your database server is running at `34.117.176.2:5432`.

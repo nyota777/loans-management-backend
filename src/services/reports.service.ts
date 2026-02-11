@@ -40,7 +40,6 @@ export async function getPaymentsReport() {
     paymentNumber: p.paymentNumber,
     isLate: p.isLate,
     penaltyAmount: Number(p.penaltyAmount),
-    createdAt: p.createdAt,
   }));
 }
 

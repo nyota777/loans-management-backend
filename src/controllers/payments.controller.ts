@@ -1,4 +1,5 @@
 import type { Request, Response } from "express";
+import type { AuthRequest } from "../middlewares/auth.middleware.js";
 import { z } from "zod";
 import {
   createPayment,

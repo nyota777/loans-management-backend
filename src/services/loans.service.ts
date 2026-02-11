@@ -1,6 +1,5 @@
 import { prisma } from "../utils/prisma.js";
 import { calculateLoan, FIXED_INTEREST_RATE, MAX_LOAN_DURATION_MONTHS } from "../utils/loanCalculator.js";
-import type { LoanStatus } from "@prisma/client";
 import { validateFutureDate } from "../utils/date.js";
 
 import { LoanType } from "@prisma/client";
@@ -46,7 +45,7 @@ export async function createLoan(data: CreateLoanInput) {
   return loan;
 }
 
-export async function getLoans(status?: LoanStatus) {
+export async function getLoans(status?: string) {
   const where = status ? { status } : {};
   const loans = await prisma.loan.findMany({
     where,
@@ -73,7 +72,7 @@ export async function getLoansByMemberId(memberId: string) {
   return loans;
 }
 
-export async function updateLoanStatus(id: string, status: LoanStatus) {
+export async function updateLoanStatus(id: string, status: string) {
   const loan = await prisma.loan.update({
     where: { id },
     data: { status },

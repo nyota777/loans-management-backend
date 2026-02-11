@@ -77,6 +77,7 @@ async function main() {
         startDate,
         expectedEndDate,
         status: i < 5 ? "CLEARED" : i < 10 ? "ACTIVE" : "ACTIVE",
+        type: i % 5 === 0 ? "EMERGENCY" : "NORMAL", // Add type field
       },
     });
     loans.push({
@@ -112,6 +113,7 @@ async function main() {
           paymentNumber: p,
           isLate,
           penaltyAmount,
+          method: Math.random() > 0.5 ? "MPESA" : "CASH", // Add method field
         },
       });
     }

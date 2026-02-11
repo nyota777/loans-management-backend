@@ -13,7 +13,7 @@ export interface DashboardSummary {
 export async function getDashboardSummary(): Promise<DashboardSummary> {
   const [totalMembers, activeLoansCount, activeLoansAgg, clearedLoansCount, overdueCount, penaltiesAgg] =
     await Promise.all([
-      prisma.member.count({ where: { deletedAt: null, isActive: true } }),
+      prisma.member.count({ where: { isActive: true } }),
       prisma.loan.count({ where: { status: "ACTIVE" } }),
       prisma.loan.aggregate({
         where: { status: "ACTIVE" },

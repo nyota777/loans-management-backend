@@ -7,7 +7,7 @@ import {
   getLoansByMemberId,
   updateLoanStatus,
 } from "../services/loans.service.js";
-import { LoanStatus, LoanType } from "@prisma/client";
+import { LoanType } from "@prisma/client";
 
 const createSchema = z.object({
   memberId: z.string().uuid(),
@@ -34,7 +34,7 @@ export async function create(req: Request, res: Response): Promise<void> {
 }
 
 export async function list(req: Request, res: Response): Promise<void> {
-  const status = req.query.status as LoanStatus | undefined;
+  const status = req.query.status as string | undefined;
   if (status && !["ACTIVE", "CLEARED", "DEFAULTED"].includes(status)) {
     res.status(400).json({ error: "Invalid status" });
     return;

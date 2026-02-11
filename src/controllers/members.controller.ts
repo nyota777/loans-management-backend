@@ -62,7 +62,10 @@ export async function update(req: Request, res: Response): Promise<void> {
     return;
   }
   try {
-    const member = await updateMember(req.params.id, parsed.data);
+    const member = await updateMember(req.params.id, {
+      ...parsed.data,
+      idNumber: parsed.data.idNumber ?? undefined,
+    });
     res.status(200).json(member);
   } catch (e: unknown) {
     const err = e as { code?: string };

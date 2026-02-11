@@ -4,7 +4,7 @@ import { env } from "./config/env.js";
 // Fallback in case PORT is missing or misconfigured
 const PORT = Number(env.PORT) || 3001;
 
-const server = app.listen(PORT, () => {
+const server = app.listen(Number(PORT), "0.0.0.0", () => {
   console.log(`Server running on port ${PORT} (${env.NODE_ENV})`);
 });
 

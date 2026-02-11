@@ -1,0 +1,19 @@
+
+> loans-management-backend@1.0.0 build
+> npx prisma generate && tsc
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to .\node_modules\@prisma\client in 117ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+src/controllers/loans.controller.ts(10,10): error TS2305: Module '"@prisma/client"' has no exported member 'LoanStatus'.
+src/controllers/members.controller.ts(65,54): error TS2345: Argument of type '{ phoneNumber?: string | undefined; fullName?: string | undefined; isActive?: boolean | undefined; idNumber?: string | null | undefined; totalContributions?: number | undefined; }' is not assignable to parameter of type 'UpdateMemberInput'.
+  Types of property 'idNumber' are incompatible.
+    Type 'string | null | undefined' is not assignable to type 'string | undefined'.
+      Type 'null' is not assignable to type 'string | undefined'.
+src/controllers/payments.controller.ts(51,27): error TS2304: Cannot find name 'AuthRequest'.
