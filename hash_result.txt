@@ -1,0 +1,4 @@
+Admin found: admin@loans.com, 0722240413
+Stored Hash: $2b$10$mOvRjjX4Q6KUlwLVDPVQXujCUobY/.g01HsbR8v6OBjdekaNuVMxa
+Password 'AdminNyota123' match result: true
+New Hash would be: $2b$10$dW4pM0VD.xm6Vqo7r5.oTOkF3DvH5LjEGZLtv023pEHdafrSnff26
